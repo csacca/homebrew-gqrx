@@ -18,7 +18,7 @@ class Gqrx < Formula
     args = "PREFIX=#{prefix}"
     args << " QT_CONFIG-=no-pkg-config"
     mkdir "build" do
-      system "qmake", "..", *args
+      system "/usr/local/opt/qt5/bin/qmake", "..", *args
       system "make"
     end
     Dir.glob("build/*.app") { |app| mv app, prefix }
