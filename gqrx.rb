@@ -15,8 +15,7 @@ class Gqrx < Formula
   depends_on "qt5"
 
   def install
-    args = "PREFIX=#{prefix}"
-    args << " QT_CONFIG-=no-pkg-config"
+    args = "QT_CONFIG-=no-pkg-config PREFIX=#{prefix}"
     mkdir "build" do
       system "/usr/local/opt/qt5/bin/qmake", "..", *args
       system "make"
