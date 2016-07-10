@@ -16,7 +16,7 @@ class Gqrx < Formula
 
   def install
     args = "PREFIX=#{prefix}"
-    args << " -DCMAKE_PREFIX_PATH=#{Formula["qt5"].opt_prefix}"
+    args << " QT_CONFIG-=no-pkg-config"
     mkdir "build" do
       system "qmake", "..", *args
       system "make"
